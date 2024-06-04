@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chimichangas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <div style="display: flex; align-items: baseline;">
+        <button style="height: 30px; width: 50px;" type="button" onclick="printEvenNumbers()">YAP</button>
+
+        <button style="display: flex; height: 30px; align-items: center; justify-content: space-evenly; margin-left: 10px;" type="button" onclick="continuousSwitch();">
+            <p style="margin-right: 5px;">Continuous</p>
+            <i id="continuousIcon" class="bi bi-check-circle"></i>
+        </button>
+    </div>
+
+    <div>
+        <h2 id="messageContainer">1</h2>
+    </div>
+
+    <script>
+        let numbah = document.getElementById("messageContainer");
+        let contIcon = document.getElementById("continuousIcon");
+        let continuity = true;
+
+        function printEvenNumbers(){
+            numbah.textContent++;
+        }
+        function continuousSwitch(){
+            if(contIcon.className == "bi bi-check-circle"){
+                contIcon.className = "bi bi-x-square";
+            }else{
+                contIcon.className = "bi bi-check-circle";
+            }
+        }
+        
+    </script>
+</body>
+</html>
