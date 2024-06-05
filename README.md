@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 ###### I'll write this description as I go, sort of like a log of developments.
 
-# This repo is for personal learning reasons, so heres what i'll be doing: 
+## This repo is for personal learning reasons, so heres what i'll be doing: 
 
 I'll be practicing a bunch of coding in here.
 
@@ -15,6 +14,3 @@ For starters, i'll pick some beginner **javascript** coding challenges that [i f
 #### :o: 4. Sort an array from lowest to highest
 #### :o: 5. Remove the spaces found in a string
 #### :o: 6. Return the number of vowels in a string
-=======
-I'll code a bunch of stuff there.
->>>>>>> a84d76f3904a7c83787c2d708d4beef9f83f6d13
