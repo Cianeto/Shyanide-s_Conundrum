@@ -57,7 +57,7 @@ function verifyIcon(){
     }else{
         return false;
     }
-}
+} 
 function continuousSwitch(){
     if(verifyIcon()){
         continuity = false;
