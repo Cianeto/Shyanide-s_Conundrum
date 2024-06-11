@@ -22,7 +22,7 @@ document.getElementById('yap').addEventListener('click', function(){
 document.getElementById('continuous').addEventListener('click', function(){
     if(continuity){oneClick = false;}
     continuousSwitch();
-});
+});y
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
