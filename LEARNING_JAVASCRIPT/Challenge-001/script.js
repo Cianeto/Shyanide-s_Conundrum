@@ -1,14 +1,14 @@
 const contEnabled = 'bi bi-check-circle';
 const contDisabled = 'bi bi-x-square';
-let numbah = document.getElementById('number');
-let contIcon = document.getElementById('continuousIcon');
-let continuity = true;
-let verifiedOnce = false;
-let oneClick = false;
+var numbah = document.getElementById('number');
+var contIcon = document.getElementById('continuousIcon');
+var continuity = true;
+var verifiedOnce = false;
+var oneClick = false;
 
 document.getElementById('start_at').addEventListener('click', function(){
     numbah.textContent = document.getElementById('startingPoint').value;
-})
+});
 
 document.getElementById('yap').addEventListener('click', function(){
     if(continuity && !oneClick){
@@ -22,7 +22,7 @@ document.getElementById('yap').addEventListener('click', function(){
 document.getElementById('continuous').addEventListener('click', function(){
     if(continuity){oneClick = false;}
     continuousSwitch();
-});y
+});
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

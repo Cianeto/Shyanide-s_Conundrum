@@ -1,40 +1,46 @@
 // Assigning elements to variables (
-var conversionButton = document.getElementById(conversionButton);
-var lengthInput = parseFloat(document.getElementById(lengthInput).value);
-var lengthDisplay = document.getElementById(lengthDisplay);
+var convertButton = document.getElementById('convert');
+var lengthInputField = document.getElementById('lengthInput');
+var lengthDisplayText = document.getElementById('lengthDisplay');
+var conversionModeButton = document.getElementById('conversionMode');
 // )
 
 // Declaring variables (
-var conversionMode = 'km';    
-var length;
+var conversionMode = 'kmToMile';
 // )
 
 // Adding events(
-conversionButton.addEventListener('click', function(){
-    showConvertedLength(lengthConverter(lengthInput, conversionMode));
+convertButton.addEventListener('click', function(){
+    showconvertButtonedLength(lengthconvertButtoner(lengthInputField, conversionMode));
+    console.log("it worked")
+});
+conversionModeButton.addEventListener('click', function(){
+    changeConversionMode();
 });
 // )
 
 // Logic Functions(
-function lengthConverter(length, conversionMode){
+function lengthconvertButtoner(length, conversionMode){
     if(conversionMode == 'kmToMile'){
-        return length * 0.621371;
+        return length.value * 0.621371;
     }else if(conversionMode == 'mileToKm'){
-        return length * 1.609344;
+        return length.value * 1.609344;
     }
 }
 function changeConversionMode(){
     if(conversionMode == 'kmToMile'){
+        conversionModeButton.textContent = 'Mile to Kilometer'
         conversionMode = 'mileToKm';
     }else{
+        conversionModeButton.textContent = 'Kilometer to Mile'
         conversionMode = 'kmToMile';
     }
 }
 // )
 
 // View Functions(
-function showConvertedLength(length){
-    lengthDisplay.textContent = length;
+function showconvertButtonedLength(length){
+    lengthDisplayText.textContent = length;
 }
 function onlyNumbers(input){
     let value = input.value;
