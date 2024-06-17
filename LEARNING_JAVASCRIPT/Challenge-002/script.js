@@ -43,8 +43,11 @@ function showconvertButtonedLength(length){
     lengthDisplayText.textContent = length;
 }
 function onlyNumbers(input){
-    let value = input.value;
-    let numbers = value.replace(/[^0-9]/g, "");
-    input.value = numbers;
+    let string = input.value;
+    let number = string.replace(/[^0-9.]/g, "");
+
+    number = number.replace(/(\.)(?=.*\.)/g, "");
+
+    input.value = number;
 }
 // )
