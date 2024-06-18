@@ -45,7 +45,6 @@ function showconvertButtonedLength(length){
 function onlyNumbers(input){
     let string = input.value;
     let number = string.replace(/[^0-9.]/g, "");
-
     number = number.replace(/(\.)(?=.*\.)/g, "");
 
     input.value = number;
