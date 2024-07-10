@@ -1,69 +1,77 @@
-const contEnabled = 'bi bi-check-circle';
-const contDisabled = 'bi bi-x-square';
-var numbah = document.getElementById('number');
-var contIcon = document.getElementById('continuousIcon');
-var continuity = true;
-var verifiedOnce = false;
-var oneClick = false;
+// Use const for constants, let for variables that change
+const contEnabled = "bi bi-check-circle";
+const contDisabled = "bi bi-x-square";
+let continuity = true;
+let verifiedOnce = false;
+let oneClick = false;
 
-document.getElementById('start_at').addEventListener('click', function(){
-    numbah.textContent = document.getElementById('startingPoint').value;
+// Cache DOM elements to avoid repeated lookups
+const numbah = document.getElementById("number");
+const contIcon = document.getElementById("continuousIcon");
+
+// Simplify event listeners using arrow functions
+document.getElementById("start_at").addEventListener("click", () => {
+  numbah.textContent = document.getElementById("startingPoint").value;
 });
-
-document.getElementById('yap').addEventListener('click', function(){
+document.getElementById('yap').addEventListener('click', () => {
     if(continuity && !oneClick){
         oneClick = true;
-        yapper();
+        Yapper.yap();
     }else if(!continuity){
-        yappin();
+        Yapper.yappin();
     }
     
 });
-document.getElementById('continuous').addEventListener('click', function(){
+document.getElementById('continuous').addEventListener('click', () => {
     if(continuity){oneClick = false;}
     continuousSwitch();
 });
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+// Example of encapsulating functionality
+class Yapper {
+  static async yap() {
+    if (continuity) {
+      verifiedOnce = true;
+      await this.sleep(500);
+      this.yappin();
+      this.yap();
+    } else if (verifiedOnce) {
+      verifiedOnce = false;
+      numbah.textContent = parseInt(numbah.textContent, 10) - 2;
+    }
+  }
+
+  static yappin() {
+    const currentNumber = parseInt(numbah.textContent, 10);
+    numbah.textContent =
+      currentNumber % 2 === 0 ? currentNumber + 2 : currentNumber + 1;
+  }
+
+  static sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 }
-// Restricts input of something thats not in the range of 0-9
-function onlyNumbers(input){
+
+function continuousSwitch() {
+  if (verifyIcon()) {
+    continuity = false;
+    contIcon.className = contDisabled;
+  } else {
+    continuity = true;
+    contIcon.className = contEnabled;
+  }
+}
+
+function verifyIcon() {
+  if (contIcon.className == contEnabled) {
+    return true;
+  } else {
+    return false;
+  }
+
+  function onlyNumbers(input) {
     let value = input.value;
     let numbers = value.replace(/[^0-9]/g, "");
     input.value = numbers;
-}
-async function yapper(){
-    if(continuity){
-        verifiedOnce = true;
-        await sleep(500);
-        yappin();
-        yapper();
-    }else if(verifiedOnce){
-        verifiedOnce = false;
-        numbah.textContent = parseInt(numbah.innerText) - 2;
-    }
-}
-function yappin(){
-    if(parseInt(numbah.innerText)%2 == 0){
-        numbah.textContent = parseInt(numbah.innerText) + 2;
-    }else{
-        numbah.textContent = parseInt(numbah.innerText) + 1;
-    }
-}
-function verifyIcon(){
-    if(contIcon.className == contEnabled){
-        return true;
-    }else{
-        return false;
-    }
-} 
-function continuousSwitch(){
-    if(verifyIcon()){
-        continuity = false;
-        contIcon.className = contDisabled;
-    }else{
-        continuity = true;
-        contIcon.className = contEnabled;
-    }
+  }
 }
