@@ -22,9 +22,9 @@ conversionModeButton.addEventListener('click', function(){
 // Logic Functions(
 function lengthconvertButtoner(length, conversionMode){
     if(conversionMode == 'kmToMile'){
-        return length.value * 0.621371;
+        return "≈ " + length.value * 0.621371;
     }else if(conversionMode == 'mileToKm'){
-        return length.value * 1.609344;
+        return "≈ " + length.value * 1.609344;
     }
 }
 function changeConversionMode(){

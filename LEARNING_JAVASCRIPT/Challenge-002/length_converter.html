@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Length Converter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="..\resources\wolf.ico">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../resources/main.css">
-    
-</head>
-<body>
-    <div>
-        <button id="conversionMode">Kilometer to Mile</button>
-        <button id="convert">convert</button>
-        <input id="lengthInput" oninput="onlyNumbers(this)">
-        <h2 id="lengthDisplay">0</h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="..\resources\wolf.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../resources/main.css" />
+  </head>
+  <body>
+    <div class="center-1">
+      <button id="conversionMode" style=" margin-bottom: 10px">Kilometer to Mile</button>
+      <div class="center-2">
+        <button id="convert" style="margin-right: 10px">Convert</button>
+        <input id="lengthInput" oninput="onlyNumbers(this)" />
+      </div>
+      <h2 id="lengthDisplay" class="center-3">≈ 0</h2>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
