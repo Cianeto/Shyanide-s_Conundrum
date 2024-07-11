@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Length Converter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="..\resources\wolf.ico">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../resources/main.css">
-    
-</head>
-<body>
+	<head>
+		<title>Length Converter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="..\resources\wolf.ico" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="../resources/main.css" />
+	</head>
+	<body>
+		<div class="center-1">
+			<div class="center-2">
+				<button id="invert" style="margin-right: 5px">Invert</button>
+				<input id="array" />
+			</div>
+			<h2 id="display" class="center-3 overflow"/>
+		</div>
 
+		<script>
+			const invertBtn = document.getElementById("invert");
+			const arrayInput = document.getElementById("array");
+			const display = document.getElementById("display");
 
-    
-    <script src="script.js"></script>
-</body>
+			invertBtn.addEventListener("click", () => {
+				display.textContent = invertArray(arrayInput.value);
+			});
+
+			function invertArray(arr) {
+				if (typeof arr === "string") {
+					return arr.split("").reverse().join("");
+				} else if (Array.isArray(arr) && arr.length < 2) {
+					return arr;
+				} else if (Array.isArray(arr)) {
+					let i, temp;
+					let j = arr.length;
+
+					for (i = 0; i < Math.floor(arr.length / 2); i++) {
+						j--;
+						temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+					return arr;
+				} else return arr;
+			}
+		</script>
+		<script src="script.js"></script>
+	</body>
 </html>

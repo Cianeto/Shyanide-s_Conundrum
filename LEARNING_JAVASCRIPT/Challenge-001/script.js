@@ -6,12 +6,12 @@ let verifiedOnce = false;
 let oneClick = false;
 
 // Cache DOM elements to avoid repeated lookups
-const numbah = document.getElementById("number");
-const contIcon = document.getElementById("continuousIcon");
+const numbah = document.getElementById('number');
+const contIcon = document.getElementById('continuousIcon');
 
 // Simplify event listeners using arrow functions
-document.getElementById("start_at").addEventListener("click", () => {
-  numbah.textContent = document.getElementById("startingPoint").value;
+document.getElementById('start_at').addEventListener('click', () => {
+  numbah.textContent = document.getElementById('startingPoint').value;
 });
 document.getElementById('yap').addEventListener('click', () => {
     if(continuity && !oneClick){
