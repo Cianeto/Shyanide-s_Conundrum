@@ -8,12 +8,16 @@ let oneClick = false;
 // Cache DOM elements to avoid repeated lookups
 const numbah = document.getElementById('number');
 const contIcon = document.getElementById('continuousIcon');
+const startAtBtn = document.getElementById('start_at');
+const yapBtn = document.getElementById('yap');
+const startingPointField = document.getElementById('startingPoint');
+const continuousBtn = document.getElementById('continuous');
 
 // Simplify event listeners using arrow functions
-document.getElementById('start_at').addEventListener('click', () => {
+startAtBtn.addEventListener('click', () => {
   numbah.textContent = document.getElementById('startingPoint').value;
 });
-document.getElementById('yap').addEventListener('click', () => {
+yapBtn.addEventListener('click', () => {
     if(continuity && !oneClick){
         oneClick = true;
         Yapper.yap();
@@ -22,7 +26,10 @@ document.getElementById('yap').addEventListener('click', () => {
     }
     
 });
-document.getElementById('continuous').addEventListener('click', () => {
+startingPointField.addEventListener('input', () => {
+  onlyNumbers(this);
+});
+continuousBtn.addEventListener('click', () => {
     if(continuity){oneClick = false;}
     continuousSwitch();
 });
