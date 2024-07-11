@@ -14,7 +14,7 @@ For starters, i'll pick some beginner **javascript** coding challenges that [i f
 
 #### :heavy_check_mark: 2. Create a length converter function
 
-#### :o: 3. Create a function that reverses an array
+#### :heavy_check_mark: 3. Create a function that reverses an array
 
 #### :o: 4. Sort an array from lowest to highest
 
