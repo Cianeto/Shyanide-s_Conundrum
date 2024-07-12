@@ -1,0 +1,40 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			.TOMALUCO {
+				font-size: 50px;
+			}
+			.CAIXINHA {
+				position: absolute;
+				left: 50%;
+				top: 40%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+			}
+			.imagem {
+				visibility: hidden;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="CAIXINHA">
+			<button id="tomaluco" class="TOMALUCO">CONTEXTO</button>
+			<img class="imagem" src="contexto.jpg" />
+		</div>
+		<script>
+			const tomalucoBtn = document.getElementById("tomaluco");
+			const imagem = document.querySelector(".imagem");
+
+			tomalucoBtn.addEventListener("click", mudarVisibilidade);
+
+			function mudarVisibilidade() {
+				imagem.style.visibility = imagem.style.visibility === "hidden" ? "visible" : "hidden";
+			}
+		</script>
+	</body>
+</html>

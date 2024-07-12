@@ -13,7 +13,9 @@ sortBtn.addEventListener('click', () => {
 function sortArray(arr) {}
 
 function onlyNumbers(input) {
-  let value = input.value;
-  let numbers = value.replace(/[^0-9]/g, '');
-  input.value = numbers;
+	const result = input.value.replace(/([^,]*)(,|$)/g, (match, p1, p2) => {
+		return p1.replace(/\./g, '#').replace('#', '.').replace(/#/g, '') + p2;
+	});
+	input.value = result;
+	// input.value = input.value.replace(/[^0-9\.,\{\} ]/g, '').replace(/(\..*)\./g, '$1');
 }
