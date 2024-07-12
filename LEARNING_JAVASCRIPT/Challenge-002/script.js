@@ -6,7 +6,7 @@ const conversionModeButton = document.getElementById('conversionMode');
 let conversionMode = 'kmToMile';
 
 lengthInputField.addEventListener('input', () => {
-	onlyNumbers(this);
+	onlyNumbers(lengthInputField);
 });
 
 convertButton.addEventListener('click', convertLength);

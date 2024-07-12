@@ -15,7 +15,7 @@ const continuousBtn = document.getElementById('continuous');
 
 // Simplify event listeners using arrow functions
 startingPointField.addEventListener('input', () => {
-	onlyNumbers(this);
+	onlyNumbers(startingPointField);
 });
 
 startAtBtn.addEventListener('click', () => {
@@ -78,10 +78,10 @@ function verifyIcon() {
 	} else {
 		return false;
 	}
+}
 
-	function onlyNumbers(input) {
-		let value = input.value;
-		let numbers = value.replace(/[^0-9]/g, '');
-		input.value = numbers;
-	}
+function onlyNumbers(input) {
+	let value = input.value;
+	let numbers = value.replace(/[^0-9]/g, '');
+	input.value = numbers;
 }
