@@ -16,8 +16,6 @@ For starters, i'll pick some beginner **javascript** coding challenges that [i f
 
 #### :heavy_check_mark: 3. Create a function that reverses an array
 
-#### :o: 4. Sort an array from lowest to highest
+#### :heavy_check_mark: 4. Sort an array from lowest to highest
 
-#### :o: 5. Remove the spaces found in a string
-
-#### :o: 6. Return the number of vowels in a string
+#### :o: 5. Return the number of vowels in a string
