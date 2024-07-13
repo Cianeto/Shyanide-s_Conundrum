@@ -57,9 +57,9 @@ class ArraySorter {
 class Regexer {
 	static execRegexer(input) {
 		let str = input.value;
-		str = allowedCharacters(str);
-		str = ensureBrackets(str);
-		str = separateValues(str);
+		str = this.allowedCharacters(str);
+		str = this.ensureBrackets(str);
+		str = this.separateValues(str);
 		input.value = str;
 	}
 

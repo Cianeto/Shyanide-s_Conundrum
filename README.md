@@ -18,4 +18,4 @@ For starters, i'll pick some beginner **javascript** coding challenges that [i f
 
 #### :heavy_check_mark: 4. Sort an array from lowest to highest
 
-#### :o: 5. Return the number of vowels in a string
+#### :heavy_check_mark: 5. Return the number of vowels in a string
