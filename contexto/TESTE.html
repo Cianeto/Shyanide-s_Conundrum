@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>contexto</title>
 
 		<style>
 			.TOMALUCO {
@@ -33,7 +33,8 @@
 			tomalucoBtn.addEventListener("click", mudarVisibilidade);
 
 			function mudarVisibilidade() {
-				imagem.style.visibility = imagem.style.visibility === "hidden" ? "visible" : "hidden";
+				const currentVisibility = window.getComputedStyle(imagem).visibility;
+				imagem.style.visibility = currentVisibility === "hidden" ? "visible" : "hidden";
 			}
 		</script>
 	</body>
