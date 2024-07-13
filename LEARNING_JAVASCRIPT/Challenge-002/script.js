@@ -43,5 +43,5 @@ function displayConvertedLength(length) {
 }
 
 function onlyNumbers(input) {
-	input.value = input.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+	input.value = input.value.replace(/[^\d.]/g, '').replace(/(\..*)\./g, '$1');
 }

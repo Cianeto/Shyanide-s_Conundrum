@@ -10,12 +10,15 @@ sortBtn.addEventListener('click', () => {
 	sortArray();
 });
 
-function sortArray(arr) {}
+function sortArray(arr) {
+
+	display.textContent = 'something';
+}
 
 function onlyNumbers(input) {
-	const result = input.value.replace(/([^,]*)(,|$)/g, (match, p1, p2) => {
-		return p1.replace(/\./g, '#').replace('#', '.').replace(/#/g, '') + p2;
-	});
-	input.value = result;
-	// input.value = input.value.replace(/[^0-9\.,\{\} ]/g, '').replace(/(\..*)\./g, '$1');
+	const regex = input.value.replace(/[^\d.,[\]]/g, '');
+
+
+	input.value = regex;
 }
+// here i want to 
