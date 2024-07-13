@@ -14,13 +14,17 @@ function sortArray(str) {
 	str = str.replace(/[\[\]]/g, '');
 	let arr = str.match(/(-?\d+(?:\.\d+)?)/g).map(Number);
 	let i, j, temp;
-	for (i = 0; i < arr.length - 2; i++) {
+	for (i = 0; i < arr.length - 1; i++) {
 		for (j = arr.length - 1; j > i; j--) {
-
+			if (arr[i] > arr[j]) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
 		}
 	}
 
-	display.textContent = arr;
+	display.textContent = '[' + arr.join(', ') + ']';
 }
 
 function theRegexer(input) {
