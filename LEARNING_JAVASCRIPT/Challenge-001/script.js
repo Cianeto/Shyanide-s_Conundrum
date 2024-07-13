@@ -82,6 +82,6 @@ function verifyIcon() {
 
 function onlyNumbers(input) {
 	let value = input.value;
-	let numbers = value.replace(/[^0-9]/g, '');
+	let numbers = value.replace(/[^\d]/g, '');
 	input.value = numbers;
 }
