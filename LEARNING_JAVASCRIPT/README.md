@@ -1,4 +1,20 @@
-## Beginner coding challenges description:
+# Playing with JavaScript
+
+For starters, I'll pick some beginner **javascript** coding challenges that [I found in a quick google search](https://www.codecademy.com/resources/blog/10-javascript-code-challenges-for-beginners/), and add my own little features to it.
+
+## Beginner coding challenges I've picked
+
+- [x] 1. Display even numbers
+
+- [x] 2. Create a length converter function
+
+- [x] 3. Create a function that reverses an array
+
+- [x] 4. Sort an array from lowest to highest
+
+- [x] 5. Return the number of vowels in a string
+
+## Description
 
 ### 1. Display even numbers
 
