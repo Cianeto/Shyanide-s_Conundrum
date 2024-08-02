@@ -103,7 +103,7 @@ def main(particle_type, colour):
             particle.update()
             particle.draw()
         pygame.display.flip()
-        CLOCK.tick(50)
+        CLOCK.tick(60)
 
 
 if __name__ == "__main__":
